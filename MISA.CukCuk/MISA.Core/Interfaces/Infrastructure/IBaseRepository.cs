@@ -17,6 +17,7 @@ namespace MISA.Core.Interfaces.Infrastructure
         /// Hàm lấy tất cả bản ghi
         /// </summary>
         /// <returns>List tất cả bản ghi</returns>
+        /// Created By LNNam (31/07/2021)
         List<MISAEntity> GetAll();
 
         /// <summary>
@@ -24,20 +25,39 @@ namespace MISA.Core.Interfaces.Infrastructure
         /// </summary>
         /// <param name="EntityId">Id của đối tượng cần tìm</param>
         /// <returns>Đối tượng có Id cần tìm</returns>
-        MISAEntity GetById(Guid EntityId);
+        /// Created By LNNam (31/07/2021)
+        MISAEntity GetById(Guid entityId);
 
         /// <summary>
         /// Hàm lấy theo Code
         /// </summary>
-        /// <param name="EntityCode">Code của đối tượng cần tìm</param>
+        /// <param name="entityCode">Code của đối tượng cần tìm</param>
         /// <returns>Đối tượng có Code cần tìm</returns>
-        MISAEntity GetByCode(string EntityCode);
+        /// Created By LNNam (31/07/2021)
+        MISAEntity GetByCode(string entityCode);
+
+        /// <summary>
+        /// Thêm bản ghi
+        /// </summary>
+        /// <param name="entity">Đối tượng bản ghi cần thêm</param>
+        /// <returns>Số bản ghi được thêm</returns>
+        /// Created By LNNam (03/08/2021)
+        int Add(MISAEntity entity);
+
+        /// <summary>
+        /// Sửa đổi bản ghi
+        /// </summary>
+        /// <param name="entity">Đối tượng bản ghi cần sửa đổi</param>
+        /// <returns>Số bản ghi bị sửa đổi</returns>
+        /// Created By LNNam (03/08/2021)
+        int Update(MISAEntity entity);
 
         /// <summary>
         /// Xóa bản ghi
         /// </summary>
-        /// <param name="EntityId">Id của đối tượng cần xóa</param>
+        /// <param name="entityId">Id của đối tượng cần xóa</param>
         /// <returns>Số bản ghi bị xóa</returns>
-        int Delete(Guid EntityId);
+        /// Created By LNNam (31/07/2021)
+        int Delete(Guid entityId);
     }
 }

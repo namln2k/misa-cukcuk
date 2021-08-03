@@ -39,8 +39,15 @@ namespace MISA.CukCuk.Api
             });
 
             services.AddScoped<IEmployeeContext, EmployeeRepository>();
+            services.AddScoped<IDepartmentContext, DepartmentRepository>();
             services.AddScoped<IEmployeeService, EmployeeService>();
+            services.AddScoped<IDepartmentService, DepartmentService>();
             services.AddScoped(typeof(IBaseRepository<>), typeof(DbContext<>));
+            services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
+            services.AddCors(options => options.AddPolicy("ApiCorsPolicy", builder =>
+            {
+                builder.WithOrigins("https://localhost:44363").AllowAnyMethod().AllowAnyHeader();
+            }));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -63,6 +70,12 @@ namespace MISA.CukCuk.Api
             {
                 endpoints.MapControllers();
             });
+
+            app.UseCors(builder => builder
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader());
+
         }
     }
 }

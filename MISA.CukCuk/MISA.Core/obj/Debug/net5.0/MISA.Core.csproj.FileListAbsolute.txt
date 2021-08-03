@@ -11,3 +11,4 @@ D:\Documents\MISA\misa-cukcuk\MISA.CukCuk\MISA.Core\obj\Debug\net5.0\ref\MISA.Co
 D:\Documents\MISA\misa-cukcuk\MISA.CukCuk\MISA.Core\obj\Debug\net5.0\MISA.Core.pdb
 D:\Documents\MISA\misa-cukcuk\MISA.CukCuk\MISA.Core\obj\Debug\net5.0\MISA.Core.Properties.Resources.resources
 D:\Documents\MISA\misa-cukcuk\MISA.CukCuk\MISA.Core\obj\Debug\net5.0\MISA.Core.csproj.GenerateResource.cache
+D:\Documents\MISA\misa-cukcuk\MISA.CukCuk\MISA.Core\obj\Debug\net5.0\MISA.Core.csproj.AssemblyReference.cache

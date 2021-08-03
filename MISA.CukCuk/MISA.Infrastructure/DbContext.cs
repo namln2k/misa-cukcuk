@@ -102,6 +102,55 @@ namespace MISA.Infrastructure
         }
 
         /// <summary>
+        /// Thêm mới bản ghi
+        /// </summary>
+        /// <param name="Entity"></param>
+        /// <returns>Số bản ghi được thêm</returns>
+        /// Created By LNNam (03/08/2021)
+        public int Add(MISAEntity entity)
+        {
+            var className = entity.GetType().Name;
+            var columnCommandText = string.Empty;
+            var paramCommandText = string.Empty;
+
+            DynamicParameters parameters = new DynamicParameters();
+
+            var properties = entity.GetType().GetProperties();
+             
+            foreach(var prop in properties)
+            {
+
+                var propName = prop.Name;
+                var propValue = prop.GetValue(entity);
+
+                columnCommandText += propName + ',';
+                paramCommandText += $"@{propName},";
+
+                parameters.Add($"@{propName}", propValue);
+            }
+
+            columnCommandText = columnCommandText.Remove(columnCommandText.Count() - 1, 1);
+            paramCommandText = paramCommandText.Remove(paramCommandText.Count() - 1, 1);
+
+            var sqlCommand = $"INSERT INTO {className}({columnCommandText}) VALUES({paramCommandText})";
+
+            var rowsEffect = DbConnection.Execute(sql: sqlCommand, param: parameters, commandType: CommandType.Text);
+
+            return rowsEffect;
+        }
+
+        /// <summary>
+        /// Sửa đổi bản ghi
+        /// </summary>
+        /// <param name="Entity"></param>
+        /// <returns>Số bản ghi bị sửa đổi</returns>
+        /// Created By LNNam (03/08/2021)
+        public int Update(MISAEntity Entity)
+        {
+            return 1;
+        }
+
+        /// <summary>
         /// Xóa đối tượng theo Id
         /// </summary>
         /// <typeparam name="entityId">Id (Khóa chính)</typeparam>

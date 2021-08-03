@@ -13,17 +13,19 @@ namespace MISA.Core.Services
     /// <summary>
     /// Lớp service thực thi Interface Employee
     /// </summary>
+    /// Created By LNNam (31/07/2021)
     public class EmployeeService : IEmployeeService
     {
         IEmployeeContext _employeeContext;
         IBaseRepository<Employee> _baseRepository;
-        ServiceResult _serviceResult = new ServiceResult();
+        ServiceResult _serviceResult;
 
         #region Constructors
         public EmployeeService(IEmployeeContext employeeContext, IBaseRepository<Employee> baseRepository)
         {
             _employeeContext = employeeContext;
             _baseRepository = baseRepository;
+            _serviceResult = new ServiceResult();
         }
         #endregion
 
@@ -172,7 +174,6 @@ namespace MISA.Core.Services
             _serviceResult.Success = true;
             return _serviceResult;
         }
-
         #endregion
     }
 }

@@ -117,6 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="DeleteDepartmentSuccess" xml:space="preserve">
+    <value>Xóa phòng ban thành công!</value>
+    <comment>Thông điệp khi xóa thành công Department</comment>
+  </data>
   <data name="DeleteEmployeeSuccess" xml:space="preserve">
     <value>Xóa nhân viên thành công!</value>
     <comment>Thông điệp khi xóa thành công Employee</comment>
@@ -128,6 +132,18 @@
   <data name="UpdateEmployeeSuccess" xml:space="preserve">
     <value>Sửa đổi thông tin nhân viên thành công!</value>
     <comment>Thông điệp khi sửa đổi thành công Employee</comment>
+  </data>
+  <data name="ValidationError_DepartmentCodeDuplicated" xml:space="preserve">
+    <value>Mã phòng ban bị trùng, vui lòng kiểm tra lại!</value>
+    <comment>Thông điệp khi DepartmentCode đã tồn tại trong database</comment>
+  </data>
+  <data name="ValidationError_DepartmentIdInexistent" xml:space="preserve">
+    <value>Id phòng ban không tồn tại, vui lòng kiểm tra lại!</value>
+    <comment>Thông điệp khi DepartmentId không tồn tại trong database</comment>
+  </data>
+  <data name="ValidationError_DepartmentIdInvalid" xml:space="preserve">
+    <value>Id phòng ban sai định dạng, vui lòng kiểm tra lại!</value>
+    <comment>Thông điệp khi DepartmentId bị sai định dạng</comment>
   </data>
   <data name="ValidationError_EmailInvalid" xml:space="preserve">
     <value>Email sai định dạng, vui lòng kiểm tra lại!</value>

@@ -61,6 +61,15 @@ namespace MISA.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Xóa phòng ban thành công!.
+        /// </summary>
+        public static string DeleteDepartmentSuccess {
+            get {
+                return ResourceManager.GetString("DeleteDepartmentSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Xóa nhân viên thành công!.
         /// </summary>
         public static string DeleteEmployeeSuccess {
@@ -84,6 +93,33 @@ namespace MISA.Core.Properties {
         public static string UpdateEmployeeSuccess {
             get {
                 return ResourceManager.GetString("UpdateEmployeeSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mã phòng ban bị trùng, vui lòng kiểm tra lại!.
+        /// </summary>
+        public static string ValidationError_DepartmentCodeDuplicated {
+            get {
+                return ResourceManager.GetString("ValidationError_DepartmentCodeDuplicated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Id phòng ban không tồn tại, vui lòng kiểm tra lại!.
+        /// </summary>
+        public static string ValidationError_DepartmentIdInexistent {
+            get {
+                return ResourceManager.GetString("ValidationError_DepartmentIdInexistent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Id phòng ban sai định dạng, vui lòng kiểm tra lại!.
+        /// </summary>
+        public static string ValidationError_DepartmentIdInvalid {
+            get {
+                return ResourceManager.GetString("ValidationError_DepartmentIdInvalid", resourceCulture);
             }
         }
         

@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 namespace MISA.Core.Interfaces.Service
 {
     /// <summary>
-    /// Interface các nghiệp vụ về thông tin nhân viên
+    /// Interface các nghiệp vụ về thông tin phòng ban
     /// </summary>
-    /// Created By LNNam (31/07/2021)
-    public interface IEmployeeService : IBaseService<Employee>
+    /// Created By LNNam (01/08/2021)
+    public interface IDepartmentService : IBaseService<Department>
     {
     }
 }
