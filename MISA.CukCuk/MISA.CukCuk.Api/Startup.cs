@@ -38,10 +38,12 @@ namespace MISA.CukCuk.Api
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MISA.CukCuk.Api", Version = "v1" });
             });
 
-            services.AddScoped<IEmployeeContext, EmployeeRepository>();
-            services.AddScoped<IDepartmentContext, DepartmentRepository>();
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+            services.AddScoped<IPositionRepository, PositionRepository>();
             services.AddScoped<IEmployeeService, EmployeeService>();
             services.AddScoped<IDepartmentService, DepartmentService>();
+            services.AddScoped<IPositionService, PositionService>();
             services.AddScoped(typeof(IBaseRepository<>), typeof(DbContext<>));
             services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
             services.AddCors(options => options.AddPolicy("ApiCorsPolicy", builder =>

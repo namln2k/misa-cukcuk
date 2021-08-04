@@ -165,6 +165,14 @@
     <value>Id nhân viên sai định dạng, vui lòng kiểm tra lại!</value>
     <comment>Thông điệp khi EmployeeId bị sai định dạng</comment>
   </data>
+  <data name="ValidationError_EntityIdDuplicated" xml:space="preserve">
+    <value>Id bị trùng, vui lòng kiểm tra lại!</value>
+    <comment>Thông điệp khi Id của đối tượng đã tồn tại trong database</comment>
+  </data>
+  <data name="ValidationError_EntityIdInexistent" xml:space="preserve">
+    <value>Id không tồn tại, vui lòng kiểm tra lại!</value>
+    <comment>Thông điệp khi Id không tồn tại trong database</comment>
+  </data>
   <data name="ValidationError_IdentityNumberEmpty" xml:space="preserve">
     <value>Số CMTND/CCCD không được phép để trống, vui lòng kiểm tra lại!</value>
     <comment>Thông điệp khi IdentityNumber bị để trống</comment>

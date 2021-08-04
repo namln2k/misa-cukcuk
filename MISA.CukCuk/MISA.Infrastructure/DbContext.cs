@@ -109,34 +109,53 @@ namespace MISA.Infrastructure
         /// Created By LNNam (03/08/2021)
         public int Add(MISAEntity entity)
         {
+            // Lấy tên class của đối tượng
             var className = entity.GetType().Name;
+
+            // Khai báo câu lệnh insert:
+            // INSERT INTO `className` + (columnCommandText) + VALUES(paramCommandText)
             var columnCommandText = string.Empty;
             var paramCommandText = string.Empty;
 
             DynamicParameters parameters = new DynamicParameters();
 
+            // Lấy tất cả các trường của đối tượng
             var properties = entity.GetType().GetProperties();
-             
-            foreach(var prop in properties)
-            {
 
+            // Duyệt qua từng trường để thêm vào câu lệnh sql
+            foreach (var prop in properties)
+            {
+                // Lấy tên trường
                 var propName = prop.Name;
+                if ((propName.ToLower() == $"{className}Id".ToLower()) && (prop.PropertyType == typeof(Guid) || prop.PropertyType == typeof(Guid?)))
+                { 
+                    // Nếu là trường id thì ta thực hiện sinh mới
+                    prop.SetValue(entity, Guid.NewGuid());
+                }
+
+                // Lấy giá trị của trường
                 var propValue = prop.GetValue(entity);
 
+                // Thêm vào 2 giá trị: tên cột và tên tham số
                 columnCommandText += propName + ',';
                 paramCommandText += $"@{propName},";
 
+                // Thêm tham số động
                 parameters.Add($"@{propName}", propValue);
             }
 
+            // Xóa dấu phẩy ở cuối phần tên cột và tên tham số
             columnCommandText = columnCommandText.Remove(columnCommandText.Count() - 1, 1);
             paramCommandText = paramCommandText.Remove(paramCommandText.Count() - 1, 1);
 
-            var sqlCommand = $"INSERT INTO {className}({columnCommandText}) VALUES({paramCommandText})";
+            // Hoàn thành câu lệnh sql
+            var sqlCommand = $"INSERT INTO `{className}`({columnCommandText}) VALUES({paramCommandText})";
 
-            var rowsEffect = DbConnection.Execute(sql: sqlCommand, param: parameters, commandType: CommandType.Text);
+            // Thực thi lệnh
+            var rowsAffected = DbConnection.Execute(sql: sqlCommand, param: parameters, commandType: CommandType.Text);
 
-            return rowsEffect;
+            // Trả về kết quả
+            return rowsAffected;
         }
 
         /// <summary>
@@ -145,9 +164,41 @@ namespace MISA.Infrastructure
         /// <param name="Entity"></param>
         /// <returns>Số bản ghi bị sửa đổi</returns>
         /// Created By LNNam (03/08/2021)
-        public int Update(MISAEntity Entity)
+        public int Update(MISAEntity entity)
         {
-            return 1;
+            // Lấy tên class của đối tượng
+            var className = entity.GetType().Name;
+
+            DynamicParameters parameters = new DynamicParameters();
+
+            // Lấy tất cả các trường của đối tượng
+            var properties = entity.GetType().GetProperties();
+
+            var sqlCommand = $"UPDATE `{className}` SET";
+
+            foreach(var prop in properties)
+            {
+                // Lấy tên trường
+                var propName = prop.Name;
+
+                // Lấy giá trị của trường
+                var propValue = prop.GetValue(entity);
+
+                // Thêm vào câu lệnh sql
+                sqlCommand += $" {propName}=@{propName},";
+
+                // Thêm tham số động
+                parameters.Add($"@{propName}", propValue);
+            }
+
+            // Xóa dấu phẩy ở cuối
+            sqlCommand = sqlCommand.Remove(sqlCommand.Count() - 1, 1);
+
+            sqlCommand += $" WHERE {className}Id=@{className}Id";
+
+            var res = DbConnection.Execute(sql: sqlCommand, param: parameters, commandType: CommandType.Text);
+
+            return res;
         }
 
         /// <summary>

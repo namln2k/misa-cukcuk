@@ -9,57 +9,57 @@ using System.Threading.Tasks;
 
 namespace MISA.Core.Services
 {
-    public class DepartmentService : IDepartmentService
+    public class DepartmentService : BaseService<Department>, IDepartmentService
     {
-        IDepartmentContext _departmentContext;
-        ServiceResult _serviceResult;
+        IDepartmentRepository _departmentRepository;
 
         #region Constructors
-        public DepartmentService(IDepartmentContext departmentContext)
+        public DepartmentService(IDepartmentRepository departmentRepository) : base(departmentRepository)
         {
-            _departmentContext = departmentContext;
-            _serviceResult = new ServiceResult();
+            _departmentRepository = departmentRepository;
         }
         #endregion
 
         #region Methods
-        public ServiceResult Add(Department department)
+        public override ServiceResult AddValidate(Department department)
         {
+            var res = new ServiceResult();
+
             // Check DepartmentCode có trùng lặp không
-            if (_departmentContext.GetByCode(department.DepartmentCode) != null)
+            if (_departmentRepository.GetByCode(department.DepartmentCode) != null)
             {
-                _serviceResult.Success = false;
-                _serviceResult.UserMsg = Properties.Resources.ValidationError_DepartmentCodeDuplicated;
-                _serviceResult.MISACode = Constants.MISAConst.MISACodeValidationError;
-                return _serviceResult;
+                res.Success = false;
+                res.UserMsg = Properties.Resources.ValidationError_DepartmentCodeDuplicated;
+                res.MISACode = Constants.MISAConst.MISACodeValidationError;
+                return res;
             }
 
-            // Số bản ghi được thêm
-            var res = _departmentContext.Add(department);
+            // Trả về kết quả
+            return res;
+        }
 
-            if (res > 0)
+        public override ServiceResult UpdateValidate(Department department)
+        {
+            var departmentById = _departmentRepository.GetById(department.DepartmentId);
+            var res = new ServiceResult();
+
+            // Check xem khách hàng có yêu cầu thay đổi EmployeeCode không
+            if (!String.Equals(department.DepartmentCode, departmentById.DepartmentCode))
             {
-                // Nếu thêm thành công
-                _serviceResult.Success = true;
-                _serviceResult.Data = res;
-                return _serviceResult;
+                // Nếu có yêu cầu thay đổi EmployeeCode thì check xem EmployeeCode có bị trùng lặp không
+                var employeeByCode = _departmentRepository.GetByCode(department.DepartmentCode);
+
+                if (employeeByCode != null)
+                {
+                    res.Success = false;
+                    res.UserMsg = Properties.Resources.ValidationError_EmployeeCodeDuplicated;
+                    res.MISACode = Constants.MISAConst.MISACodeValidationError;
+                    return res;
+                }
             }
 
-            // Nếu thêm thất bại
-            _serviceResult.Success = false;
-            _serviceResult.UserMsg = Properties.Resources.ExceptionError;
-            _serviceResult.MISACode = Constants.MISAConst.MISACodeExceptionError;
-            return _serviceResult;
-        }
-
-        public int Update(Department entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        ServiceResult IBaseService<Department>.Update(Department entity)
-        {
-            throw new NotImplementedException();
+            // Trả về kết quả
+            return res;
         }
         #endregion
     }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MISA.Infrastructure.Repository
 {
-    public class EmployeeRepository : DbContext<Employee>, IEmployeeContext
+    public class EmployeeRepository : DbContext<Employee>, IEmployeeRepository
     {
         //public int Add(Employee employee)
         //{

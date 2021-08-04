@@ -10,15 +10,12 @@ using System.Threading.Tasks;
 
 namespace MISA.CukCuk.Api.Controllers
 {
-    /// <summary>
-    /// Lớp Controller các hoạt động liên quan đến Department
-    /// </summary>
-    [Route("api/v1/departments")]
+    [Route("api/v1/positions")]
     [ApiController]
-    public class DepartmentController : BaseEntityController<Department>
+    public class PositionControllers : BaseEntityController<Position>
     {
         #region Constructors
-        public DepartmentController(IBaseRepository<Department> baseRepository, IDepartmentService departmentService) : base(baseRepository, departmentService)
+        public PositionControllers(IBaseRepository<Position> positionRepository, IPositionService positionService) : base(positionRepository, positionService)
         {
         }
         #endregion

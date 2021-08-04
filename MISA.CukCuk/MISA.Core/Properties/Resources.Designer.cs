@@ -169,6 +169,24 @@ namespace MISA.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Id bị trùng, vui lòng kiểm tra lại!.
+        /// </summary>
+        public static string ValidationError_EntityIdDuplicated {
+            get {
+                return ResourceManager.GetString("ValidationError_EntityIdDuplicated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Id không tồn tại, vui lòng kiểm tra lại!.
+        /// </summary>
+        public static string ValidationError_EntityIdInexistent {
+            get {
+                return ResourceManager.GetString("ValidationError_EntityIdInexistent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Số CMTND/CCCD không được phép để trống, vui lòng kiểm tra lại!.
         /// </summary>
         public static string ValidationError_IdentityNumberEmpty {

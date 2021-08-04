@@ -18,14 +18,9 @@ namespace MISA.CukCuk.Api.Controllers
     [ApiController]
     public class EmployeeControllers : BaseEntityController<Employee>
     {
-        //IBaseRepository<Employee> _employeeRepository;
-        //IEmployeeService _employeeService;
-
         #region Constructors
         public EmployeeControllers(IBaseRepository<Employee> employeeRepository, IEmployeeService employeeService) : base(employeeRepository, employeeService)
         {
-            //_employeeRepository = employeeRepository;
-            //_employeeService = employeeService;
         }
         #endregion
     }

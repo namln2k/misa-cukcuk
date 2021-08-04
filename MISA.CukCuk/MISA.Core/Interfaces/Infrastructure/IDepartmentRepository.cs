@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 namespace MISA.Core.Interfaces.Infrastructure
 {
     /// <summary>
-    /// Interface giao tiếp với table Employee
+    /// Interface giao tiếp với table Department
     /// </summary>
-    /// Created By LNNam (31/07/2021)
-    public interface IEmployeeContext : IBaseRepository<Employee>
+    /// Created By LNNam (01/08/2021)
+    public interface IDepartmentRepository : IBaseRepository<Department>
     {
     }
 }

@@ -1,5 +1,4 @@
-﻿using Dapper;
-using MISA.Core.Entities;
+﻿using MISA.Core.Entities;
 using MISA.Core.Interfaces.Infrastructure;
 using System;
 using System.Collections.Generic;
@@ -9,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MISA.Infrastructure.Repository
 {
-    public class DepartmentRepository : DbContext<Department>, IDepartmentRepository
+    public class PositionRepository : DbContext<Position>, IPositionRepository
     {
     }
 }
