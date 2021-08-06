@@ -16,16 +16,23 @@ namespace MISA.Core.Entities
         /// <summary>
         /// Khóa chính
         /// </summary>
+        [MISARequired]
+        [MISADisplayName("Id phòng ban")]
         public Guid DepartmentId { get; set; }
 
         /// <summary>
         /// Mã phòng ban
         /// </summary>
+        [MISARequired]
+        [MISADisplayName("Mã phòng ban")]
+        [MISAPrimaryKey]
         public string DepartmentCode { get; set; }
 
         /// <summary>
         /// Tên phòng ban
         /// </summary>
+        [MISARequired]
+        [MISADisplayName("Tên phòng ban")]
         public string DepartmentName { get; set; }
 
         /// <summary>

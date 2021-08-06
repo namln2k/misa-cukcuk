@@ -17,16 +17,23 @@ namespace MISA.Core.Entities
         /// <summary>
         /// Khóa chính
         /// </summary>
+        [MISARequired]
+        [MISADisplayName("Id nhân viên")]
         public Guid EmployeeId { get; set; }
 
         /// <summary>
         /// Mã nhân viên
         /// </summary>
+        [MISARequired]
+        [MISADisplayName("Mã nhân viên")]
+        [MISAPrimaryKey]
         public string EmployeeCode { get; set; }
 
         /// <summary>
         /// Họ và tên
         /// </summary>
+        [MISARequired]
+        [MISADisplayName("Tên nhân viên")]
         public string FullName { get; set; }
 
         /// <summary>
@@ -42,11 +49,13 @@ namespace MISA.Core.Entities
         /// <summary>
         /// Số điện thoại
         /// </summary>
+        [MISARequired]
         public string PhoneNumber { get; set; }
 
         /// <summary>
         /// Email
         /// </summary>
+        [MISARequired]
         public string Email { get; set; }
 
         /// <summary>

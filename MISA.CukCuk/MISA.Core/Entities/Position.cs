@@ -16,16 +16,23 @@ namespace MISA.Core.Entities
         /// <summary>
         /// Khóa chính
         /// </summary>
+        [MISARequired]
+        [MISADisplayName("Id vị trí")]
         public Guid PositionId { get; set; }
 
         /// <summary>
         /// Mã vị trí
         /// </summary>
+        [MISARequired]
+        [MISADisplayName("Mã vị trí")]
+        [MISAPrimaryKey]
         public string PositionCode { get; set; }
 
         /// <summary>
         /// Tên phòng ban
         /// </summary>
+        [MISARequired]
+        [MISADisplayName("Tên vị trí")]
         public string PositionName { get; set; }
 
         /// <summary>
@@ -37,6 +44,6 @@ namespace MISA.Core.Entities
         /// <summary>
         /// 
         /// </summary>
-        public Guid ParentId { get; set; }
+        public Guid? ParentId { get; set; }
     }
 }

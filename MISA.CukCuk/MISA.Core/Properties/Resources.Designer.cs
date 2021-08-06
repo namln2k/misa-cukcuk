@@ -61,65 +61,11 @@ namespace MISA.Core.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Xóa phòng ban thành công!.
-        /// </summary>
-        public static string DeleteDepartmentSuccess {
-            get {
-                return ResourceManager.GetString("DeleteDepartmentSuccess", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Xóa nhân viên thành công!.
-        /// </summary>
-        public static string DeleteEmployeeSuccess {
-            get {
-                return ResourceManager.GetString("DeleteEmployeeSuccess", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Có lỗi xảy ra, vui lòng liên hệ MISA!.
         /// </summary>
         public static string ExceptionError {
             get {
                 return ResourceManager.GetString("ExceptionError", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Sửa đổi thông tin nhân viên thành công!.
-        /// </summary>
-        public static string UpdateEmployeeSuccess {
-            get {
-                return ResourceManager.GetString("UpdateEmployeeSuccess", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Mã phòng ban bị trùng, vui lòng kiểm tra lại!.
-        /// </summary>
-        public static string ValidationError_DepartmentCodeDuplicated {
-            get {
-                return ResourceManager.GetString("ValidationError_DepartmentCodeDuplicated", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Id phòng ban không tồn tại, vui lòng kiểm tra lại!.
-        /// </summary>
-        public static string ValidationError_DepartmentIdInexistent {
-            get {
-                return ResourceManager.GetString("ValidationError_DepartmentIdInexistent", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Id phòng ban sai định dạng, vui lòng kiểm tra lại!.
-        /// </summary>
-        public static string ValidationError_DepartmentIdInvalid {
-            get {
-                return ResourceManager.GetString("ValidationError_DepartmentIdInvalid", resourceCulture);
             }
         }
         
@@ -133,56 +79,38 @@ namespace MISA.Core.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mã nhân viên bị trùng, vui lòng kiểm tra lại!.
+        ///   Looks up a localized string similar to  bị trùng, vui lòng kiểm tra lại!.
         /// </summary>
-        public static string ValidationError_EmployeeCodeDuplicated {
+        public static string ValidationError_EntityCodeDuplicated {
             get {
-                return ResourceManager.GetString("ValidationError_EmployeeCodeDuplicated", resourceCulture);
+                return ResourceManager.GetString("ValidationError_EntityCodeDuplicated", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mã nhân viên không được phép để trống, vui lòng kiểm tra lại!.
+        ///   Looks up a localized string similar to  không được phép để trống, vui lòng kiểm tra lại!.
         /// </summary>
-        public static string ValidationError_EmployeeCodeEmpty {
+        public static string ValidationError_EntityFieldEmpty {
             get {
-                return ResourceManager.GetString("ValidationError_EmployeeCodeEmpty", resourceCulture);
+                return ResourceManager.GetString("ValidationError_EntityFieldEmpty", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Id nhân viên không tồn tại, vui lòng kiểm tra lại!.
-        /// </summary>
-        public static string ValidationError_EmployeeIdInexistent {
-            get {
-                return ResourceManager.GetString("ValidationError_EmployeeIdInexistent", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Id nhân viên sai định dạng, vui lòng kiểm tra lại!.
-        /// </summary>
-        public static string ValidationError_EmployeeIdInvalid {
-            get {
-                return ResourceManager.GetString("ValidationError_EmployeeIdInvalid", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Id bị trùng, vui lòng kiểm tra lại!.
-        /// </summary>
-        public static string ValidationError_EntityIdDuplicated {
-            get {
-                return ResourceManager.GetString("ValidationError_EntityIdDuplicated", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Id không tồn tại, vui lòng kiểm tra lại!.
+        ///   Looks up a localized string similar to  không tồn tại, vui lòng kiểm tra lại!.
         /// </summary>
         public static string ValidationError_EntityIdInexistent {
             get {
                 return ResourceManager.GetString("ValidationError_EntityIdInexistent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  Id sai định dạng, vui lòng kiểm tra lại!.
+        /// </summary>
+        public static string ValidationError_EntityIdInvalid {
+            get {
+                return ResourceManager.GetString("ValidationError_EntityIdInvalid", resourceCulture);
             }
         }
         

@@ -16,16 +16,23 @@ namespace MISA.Core.Entities
         /// <summary>
         /// Khóa chính
         /// </summary>
+        [MISARequired]
+        [MISADisplayName("Id khách hàng")]
         public Guid CustomerId { get; set; }
 
         /// <summary>
         /// Mã khách hàng
         /// </summary>
+        [MISARequired]
+        [MISADisplayName("Mã khách hàng")]
+        [MISAPrimaryKey]
         public string CustomerCode { get; set; }
 
         /// <summary>
         /// Họ và tên
         /// </summary>
+        [MISARequired]
+        [MISADisplayName("Tên khách hàng")]
         public string FullName { get; set; }
 
         /// <summary>

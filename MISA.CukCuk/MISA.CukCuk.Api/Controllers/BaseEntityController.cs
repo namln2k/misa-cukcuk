@@ -66,7 +66,7 @@ namespace MISA.CukCuk.Api.Controllers
         }
 
         /// <summary>
-        /// Lấy thông tin tất cả bản ghi
+        /// Lấy bản ghi theo Id
         /// </summary>
         /// <returns>IActionResult</returns>
         /// Created By LNNam(03/08/2021)
@@ -80,7 +80,7 @@ namespace MISA.CukCuk.Api.Controllers
             if (!isGuid)
             {
                 _serviceResult.Success = false;
-                _serviceResult.UserMsg = Core.Properties.Resources.ValidationError_EmployeeIdInvalid;
+                _serviceResult.UserMsg = Core.Properties.Resources.ValidationError_EntityIdInvalid;
                 _serviceResult.MISACode = Core.Constants.MISAConst.MISACodeValidationError;
                 return BadRequest(_serviceResult);
             }
@@ -207,7 +207,7 @@ namespace MISA.CukCuk.Api.Controllers
             if (!isGuid)
             {
                 _serviceResult.Success = false;
-                _serviceResult.UserMsg = Core.Properties.Resources.ValidationError_EmployeeIdInvalid;
+                _serviceResult.UserMsg = Core.Properties.Resources.ValidationError_EntityIdInvalid;
                 _serviceResult.MISACode = Core.Constants.MISAConst.MISACodeValidationError;
                 return BadRequest(_serviceResult);
             }

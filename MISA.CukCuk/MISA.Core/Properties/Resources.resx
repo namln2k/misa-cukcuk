@@ -117,61 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="DeleteDepartmentSuccess" xml:space="preserve">
-    <value>Xóa phòng ban thành công!</value>
-    <comment>Thông điệp khi xóa thành công Department</comment>
-  </data>
-  <data name="DeleteEmployeeSuccess" xml:space="preserve">
-    <value>Xóa nhân viên thành công!</value>
-    <comment>Thông điệp khi xóa thành công Employee</comment>
-  </data>
   <data name="ExceptionError" xml:space="preserve">
     <value>Có lỗi xảy ra, vui lòng liên hệ MISA!</value>
     <comment>Thông điệp khi xảy ra Exception</comment>
-  </data>
-  <data name="UpdateEmployeeSuccess" xml:space="preserve">
-    <value>Sửa đổi thông tin nhân viên thành công!</value>
-    <comment>Thông điệp khi sửa đổi thành công Employee</comment>
-  </data>
-  <data name="ValidationError_DepartmentCodeDuplicated" xml:space="preserve">
-    <value>Mã phòng ban bị trùng, vui lòng kiểm tra lại!</value>
-    <comment>Thông điệp khi DepartmentCode đã tồn tại trong database</comment>
-  </data>
-  <data name="ValidationError_DepartmentIdInexistent" xml:space="preserve">
-    <value>Id phòng ban không tồn tại, vui lòng kiểm tra lại!</value>
-    <comment>Thông điệp khi DepartmentId không tồn tại trong database</comment>
-  </data>
-  <data name="ValidationError_DepartmentIdInvalid" xml:space="preserve">
-    <value>Id phòng ban sai định dạng, vui lòng kiểm tra lại!</value>
-    <comment>Thông điệp khi DepartmentId bị sai định dạng</comment>
   </data>
   <data name="ValidationError_EmailInvalid" xml:space="preserve">
     <value>Email sai định dạng, vui lòng kiểm tra lại!</value>
     <comment>Thông điệp khi Email bị sai định dạng</comment>
   </data>
-  <data name="ValidationError_EmployeeCodeDuplicated" xml:space="preserve">
-    <value>Mã nhân viên bị trùng, vui lòng kiểm tra lại!</value>
-    <comment>Thông điệp khi EmployeeCode đã tồn tại trong database</comment>
+  <data name="ValidationError_EntityCodeDuplicated" xml:space="preserve">
+    <value> bị trùng, vui lòng kiểm tra lại!</value>
+    <comment>Thông điệp khi trường khóa chính đã tồn tại trong database</comment>
   </data>
-  <data name="ValidationError_EmployeeCodeEmpty" xml:space="preserve">
-    <value>Mã nhân viên không được phép để trống, vui lòng kiểm tra lại!</value>
-    <comment>Thông điệp khi EmployeeCode bị để trống hoặc null</comment>
-  </data>
-  <data name="ValidationError_EmployeeIdInexistent" xml:space="preserve">
-    <value>Id nhân viên không tồn tại, vui lòng kiểm tra lại!</value>
-    <comment>Thông điệp khi EmployeeId không tồn tại trong database</comment>
-  </data>
-  <data name="ValidationError_EmployeeIdInvalid" xml:space="preserve">
-    <value>Id nhân viên sai định dạng, vui lòng kiểm tra lại!</value>
-    <comment>Thông điệp khi EmployeeId bị sai định dạng</comment>
-  </data>
-  <data name="ValidationError_EntityIdDuplicated" xml:space="preserve">
-    <value>Id bị trùng, vui lòng kiểm tra lại!</value>
-    <comment>Thông điệp khi Id của đối tượng đã tồn tại trong database</comment>
+  <data name="ValidationError_EntityFieldEmpty" xml:space="preserve">
+    <value> không được phép để trống, vui lòng kiểm tra lại!</value>
+    <comment>Thông điệp khi trường bắt buộc bị để trống</comment>
   </data>
   <data name="ValidationError_EntityIdInexistent" xml:space="preserve">
-    <value>Id không tồn tại, vui lòng kiểm tra lại!</value>
+    <value> không tồn tại, vui lòng kiểm tra lại!</value>
     <comment>Thông điệp khi Id không tồn tại trong database</comment>
+  </data>
+  <data name="ValidationError_EntityIdInvalid" xml:space="preserve">
+    <value> Id sai định dạng, vui lòng kiểm tra lại!</value>
+    <comment>Thông điệp khi Id sai định dạng</comment>
   </data>
   <data name="ValidationError_IdentityNumberEmpty" xml:space="preserve">
     <value>Số CMTND/CCCD không được phép để trống, vui lòng kiểm tra lại!</value>
